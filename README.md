@@ -1,4 +1,4 @@
 # Slider
 
-# example 
+Example
 http://wongeun.com/lab/slider/
