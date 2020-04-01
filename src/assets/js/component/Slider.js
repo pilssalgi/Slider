@@ -20,7 +20,7 @@ export default class Slider {
 
     this.config = {
       power: UA.isPC ? 0.2 : 0.4,
-      friction: 0.96,
+      friction: 0.93,
       reverse: false,
       arrowLeft: null,
       arrowRight: null,
@@ -106,26 +106,25 @@ export default class Slider {
       this.drag.old = e.start
       if (!this.isRender) {
         this.isRender = true
+        console.log("this.isRender", this.isRender);
         requestAnimationFrame(this.render.bind(this))
       }
-
-      // if(this.preventClickTimer)clearTimeout(this.preventClickTimer);
+      if(this.preventClickTimer)clearTimeout(this.preventClickTimer);
     }
 
     this.dnd.onMove = (e) => {
-      let vf = (this.drag.old.x - e.move.x) * this.config.power
-      this.drag.vf += Math.round(vf)
+      this.drag.vf += Math.round((this.drag.old.x - e.move.x) * this.config.power)
       this.drag.old = e.move
-      // if(!this.isDragOn)this.$.wrap.classList.add('preventClick');
+      if(!this.isDragOn)this.$.wrap.classList.add('preventClick');
       this.isDragOn = true;
     }
 
     this.dnd.onEnd = (e) => {
       this.isDrag = false
       this.isDragOn = false;
-      // this.preventClickTimer = setTimeout(()=>{
-      //   this.$.wrap.classList.remove('preventClick');
-      // },100)
+      this.preventClickTimer = setTimeout(()=>{
+        this.$.wrap.classList.remove('preventClick');
+      },100)
       
     }
 
