@@ -1,0 +1,37 @@
+//- @mixin svg
+//- @mixin use
+//- @example
+//-     +svg("ソーシャルメディアのアイコン集", "snsIconsLink")(width="32", height="16", viewBox="0 0 32 16")
+//-         +use("icon-twitter")(width="16", height="16", viewBox="0 0 16 16", style="color: skyblue;")
+//-         +use("icon-instagram")(x="16", width="16", height="16", viewBox="0 0 16 16", style="color: limegreen;")
+
+mixin use(id)
+    use(xlink:href=`#${id}`)&attributes(attributes)
+
+mixin svg(title, titleId, fallbackImage)
+    -
+        // var svgAttrObj = { "preserveAspectRatio": "xMidYMid meet", "pointer-events": "none" };
+        var svgAttrObj = {};
+        var titleAttrObj = {};
+
+    if titleId
+        -
+            svgAttrObj["aria-labelledby"] = titleId;
+            svgAttrObj["role"] = "img";
+            titleAttrObj["id"] = titleId;
+
+    svg&attributes(svgAttrObj)&attributes(attributes)
+        if title
+            title&attributes(titleAttrObj) #{title}
+        block
+        if fallbackImage
+            foreignObject(display="none")
+                img(alt=title, src=fallbackImage)
+
+//- @mixin uvg-use
+//- @example
+//-     +svg-use("icon-twitter", "Twitter", "twLinkTitle")(width="16", height="16", viewBox="0 0 16 16", style="color: skyblue;")
+
+mixin svg-use(id, title, titleId, fallbackImage)
+    +svg(title, titleId, fallbackImage)&attributes(attributes)
+        +use(id)

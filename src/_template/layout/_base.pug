@@ -1,0 +1,37 @@
+block vars
+	-	
+		var page = {
+			lang: "ja",
+			canonical: "",
+			title: "",
+			description: "",
+			keyword:"",
+			og: {
+				type:"website",
+				url:"/",
+				site_name:'',
+				img:""
+			},
+			twitter: {
+				site:'',
+				card:'summary_large_image',
+				title:'',
+				image:'',
+				description:''
+			}
+		}
+
+		var bodyClass = ""
+
+doctype html
+html(lang=page.lang)
+	include ./_head
+	include ../modules/_svg-use
+
+	body(class=bodyClass)
+		include /assets/images/symbols.svg
+		
+		main.pageContent
+			block mainContent
+
+		include ./_script

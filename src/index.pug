@@ -1,0 +1,35 @@
+extends /_template/layout/_base
+
+block append vars
+	- page.title = "index"
+	- page.pathName = "/"
+
+block mainContent
+	
+	h1 YOYO Slider 
+
+	div.slider
+		div.slider-outer
+			div.slider-inner
+				div.slider__item
+					img(src="./assets/images/dummy-1.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-2.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-3.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-4.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-5.jpg")
+				a.slider__item(href="google.com" target="_blank")
+					img(src="./assets/images/dummy-6.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-7.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-8.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-9.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-10.jpg")
+				div.slider__item
+					img(src="./assets/images/dummy-11.jpg")

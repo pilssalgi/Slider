@@ -1,0 +1,35 @@
+/* ************************************************************
+  font
+************************************************************ */
+@font-face {
+  font-family: "NotoSans-Regular";
+  font-style: normal;
+  src: url("../font/notosans/Subset-NotoSansCJKjp-Regular.otf") format('otf'),
+       url("../font/notosans/Subset-NotoSansCJKjp-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "NotoSans-Medium";
+  font-style: normal;
+  src: url("../font/notosans/Subset-NotoSansCJKjp-Medium.otf") format('otf'),
+       url("../font/notosans/Subset-NotoSansCJKjp-Medium.woff") format('woff');
+}
+@font-face {
+  font-family: "NotoSans-Bold";
+  font-style: normal;
+  src: url("../font/notosans/Subset-NotoSansCJKjp-Bold.otf") format('otf'),
+       url("../font/notosans/Subset-NotoSansCJKjp-Bold.woff") format('woff');
+}
+
+/* ************************************************************
+  commone variables
+************************************************************ */
+$font-jp : 'NotoSans-Regular', "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,"Meiryo UI" , "メイリオ" ,"Meiryo" , "ＭＳ Ｐゴシック" , "MS PGothic",sans-serif;
+
+
+html,body { 
+  font-family: $font-jp;
+  font-size: 14px; 
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
+}
