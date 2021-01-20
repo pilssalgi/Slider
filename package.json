@@ -13,7 +13,7 @@
   "license": "",
   "private": true,
   "dependencies": {
-    "gsap": "^2.1.2",
+    "gsap": "^3.6.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.15",
     "three": "^0.94.0"
